@@ -36,7 +36,7 @@ while ($a_row = mysqli_fetch_assoc($result)) {
         <label for="campus-select">Choose a campus:</label>
         <select name="campus" id="campus-select" required>
             <option value="" disabled selected>Please select your school below.</option>
-            <option value="" disabled selected>--------------------------------</option>
+            <option value="" disabled>------------------------------------------------</option>
             <?php
             // Loop through campuses array and generate the options for the dropdown.
             foreach ($campuses as $id => $campus) {
