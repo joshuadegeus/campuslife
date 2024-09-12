@@ -1,14 +1,13 @@
 <?php
 
-// Initialize the database, this should be a function in a config file.
-$host = "sql210.infinityfree.com";
-$user = "if0_37292991";
-$pass = "jFyqDWgD6DcPd";
-$db = "if0_37292991_campus_life";
+// Include Configuaration File.
+require_once($_SERVER['DOCUMENT_ROOT']."/includes/config.php");
 
-$db=mysqli_connect($host, $user,  $pass, $db) or die ('I cannot connect to the database because:' . mysqli_error($db));
+// Initialize the Database.
+$db = initializeDB();
 
-$campuses = array(); // Initialize empty array for list of schools.
+
+$campuses = array(); // Initialize Empty Array for List of Schools.
 
 $query = "SELECT *
           FROM campus
@@ -27,18 +26,18 @@ while ($a_row = mysqli_fetch_assoc($result)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Select Your School</title>
+    <title>Select School</title>
 </head>
 <body>
 
     <h1>Select Your School</h1>
-    <form action="your_form_processing_script.php" method="POST">
+    <form action="home.php" method="GET">
         <label for="campus-select">Choose a campus:</label>
         <select name="campus" id="campus-select" required>
             <option value="" disabled selected>Please select your school below.</option>
-            <option value="" disabled>------------------------------------------------</option>
+            <option value="" disabled>--------------------------------------------</option>
             <?php
-            // Loop through campuses array and generate the options for the dropdown.
+            // Loop Through Campuses Array and Generate the Options for the Dropdown.
             foreach ($campuses as $id => $campus) {
                 echo "<option value='" . htmlspecialchars($id) . "'>" . htmlspecialchars($campus['name']) . "</option>";
             }
