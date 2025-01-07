@@ -1,0 +1,18 @@
+/******** use this to over-ride bootstrap styles ********/
+
+
+/*** btns ***/
+.btn-primary {background-color: #6f42c1;border-color:#6f42c1;}
+.btn-primary:hover, 
+.btn-primary:focus-visible {background-color:#523091;border-color:#fafafa;}
+.btn-primary:active {background-color:#3a2267;border-color:#3a2267;}
+.btn-bottom {display:flex;flex-direction: column;}
+.btn-bottom .btn-primary {margin-top: auto;}
+.btn-link {padding-left:0;}
+
+/*** type ***/
+h1, h2, h3, h4, h5, h6, 
+.h1, .h2, .h3, .h4, .h5, .h6, 
+header, footer {font-family: "Raleway", sans-serif;}
+
+.col p.lead {max-width: 50em;}
